@@ -1,14 +1,11 @@
 services:
   - type: web
     name: enterprise-voice-ai-omniagent-api
-    runtime: python
+    runtime: docker
     plan: free
-    buildCommand: pip install -r requirements.txt && apt-get update && apt-get install -y ffmpeg
-    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    dockerfilePath: ./Dockerfile
     healthCheckPath: /health
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.9
       - key: WHISPER_MODEL
         value: tiny
       - key: WHISPER_DEVICE
