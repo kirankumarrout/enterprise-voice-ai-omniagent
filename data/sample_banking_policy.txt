@@ -1,0 +1,9 @@
+BANKING CUSTOMER SERVICE POLICY
+
+Lost or stolen cards should be blocked immediately through the mobile banking application or the official support channel. Agents must never request a customer's PIN, CVV, password, or one-time authentication code.
+
+For unauthorized transactions, capture the transaction reference, approximate date, amount, and preferred contact channel. Account-specific investigation must use an authenticated workflow.
+
+Loan eligibility depends on product criteria including income, employment profile, credit history, requested amount, and repayment capacity. Agents must not guarantee approval.
+
+When information is unavailable in the knowledge base or an authenticated action is required, the assistant must explain the limitation and route the customer to the appropriate banking workflow.
