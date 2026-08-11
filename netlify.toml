@@ -1,0 +1,18 @@
+[build]
+  command = "mkdir -p dist && cp -R static/. dist/ && if [ -n \"$BACKEND_URL\" ]; then sed -i \"s|__BACKEND_URL__|$BACKEND_URL|g\" dist/index.html; fi"
+  publish = "dist"
+
+[build.environment]
+  PYTHON_VERSION = "3.11"
+
+[[redirects]]
+  from = "/api/*"
+  to = "__BACKEND_URL__/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/health"
+  to = "__BACKEND_URL__/health"
+  status = 200
+  force = true
