@@ -10,8 +10,14 @@ class ASRService:
             f.write(audio_bytes)
             path = f.name
         try:
-            segments, info = self.model.transcribe(path, beam_size=5, vad_filter=True,
-                                                    condition_on_previous_text=False)
+            # Small CPU instances are much faster with greedy decoding than beam search.
+            segments, info = self.model.transcribe(
+                path,
+                beam_size=1,
+                best_of=1,
+                vad_filter=True,
+                condition_on_previous_text=False,
+            )
             text = " ".join(s.text.strip() for s in segments).strip()
             return {"text": text, "language": info.language}
         finally:
