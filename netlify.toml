@@ -1,5 +1,5 @@
 [build]
-  command = "mkdir -p dist && cp -R static/. dist/ && if [ -n \"$BACKEND_URL\" ]; then sed -i \"s|__BACKEND_URL__|$BACKEND_URL|g\" dist/index.html; fi"
+  command = "mkdir -p dist && cp -R static/. dist/"
   publish = "dist"
 
 [build.environment]
@@ -7,12 +7,12 @@
 
 [[redirects]]
   from = "/api/*"
-  to = "__BACKEND_URL__/api/:splat"
+  to = "https://enterprise-voice-ai-omniagent.onrender.com/api/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "/health"
-  to = "__BACKEND_URL__/health"
+  to = "https://enterprise-voice-ai-omniagent.onrender.com/health"
   status = 200
   force = true
