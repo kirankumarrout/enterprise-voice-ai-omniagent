@@ -4,7 +4,7 @@
 
 ### Real-time Voice AI • RAG • LangGraph • ASR • VAD • Cloud Deployment
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://cheerful-yeot-946215.netlify.app/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://enterprise-voice-ai-omniagent.netlify.app/)
 [![Backend](https://img.shields.io/badge/API-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://enterprise-voice-ai-omniagent.onrender.com/health)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-API-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
@@ -13,7 +13,7 @@
 
 <br/>
 
-<a href="https://cheerful-yeot-946215.netlify.app/"><strong>🚀 Try the Live Demo</strong></a>
+<a href="https://enterprise-voice-ai-omniagent.netlify.app/"><strong>🚀 Try the Live Demo</strong></a>
 &nbsp;&nbsp;•&nbsp;&nbsp;
 <a href="https://github.com/kirankumarrout/enterprise-voice-ai-omniagent">📦 View Source</a>
 
@@ -380,7 +380,7 @@ The Dockerized FastAPI backend is deployed on Render:
 
 The static frontend is deployed on Netlify:
 
-**Live demo:** https://cheerful-yeot-946215.netlify.app/
+**Live demo:** https://enterprise-voice-ai-omniagent.netlify.app/
 
 Netlify proxies `/api/*` requests to the Render backend so the browser communicates through the same public frontend origin.
 
@@ -415,7 +415,7 @@ Computer Science Engineer • Software Development • AI Systems • Cloud
 
 - GitHub: https://github.com/kirankumarrout
 - Project: https://github.com/kirankumarrout/enterprise-voice-ai-omniagent
-- Live Demo: https://cheerful-yeot-946215.netlify.app/
+- Live Demo: https://enterprise-voice-ai-omniagent.netlify.app/
 
 ---
 
