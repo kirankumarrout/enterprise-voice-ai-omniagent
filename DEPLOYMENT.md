@@ -6,6 +6,8 @@
 - **Backend:** Dockerized FastAPI service on Render (or another Docker-capable host)
 - **Browser flow:** microphone → FastAPI → Whisper/VAD → LangGraph/RAG → browser TTS
 
+The backend also serves the frontend at its root URL. This provides a complete public application from Render when Netlify visitor access is restricted.
+
 ## Backend: Render
 
 This repository includes `render.yaml` and `Dockerfile`.
@@ -17,7 +19,9 @@ This repository includes `render.yaml` and `Dockerfile`.
 5. Copy the deployed backend URL, for example `https://enterprise-voice-ai-omniagent-api.onrender.com`.
 6. Set `FRONTEND_URL` on the backend to the Netlify site URL after the frontend is deployed.
 
-The first voice request may be slower because the `faster-whisper` model is downloaded/cached. The default deployment uses `WHISPER_MODEL=tiny` for a practical CPU demo.
+Open the deployed backend root URL to use the application directly without a separate frontend host.
+
+The frontend and health endpoint start without loading the speech models. The first voice request may be slower because the `faster-whisper` model is loaded and downloaded if it is not cached. The default deployment uses `WHISPER_MODEL=tiny` for a practical CPU demo.
 
 ## Frontend: Netlify
 

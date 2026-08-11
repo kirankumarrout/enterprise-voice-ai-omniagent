@@ -1,6 +1,8 @@
 import os
+from pathlib import Path
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from .config import get_settings
 from .rag.engine import RAGEngine
 from .agent.graph import build_graph
@@ -33,4 +35,14 @@ app.include_router(voice_router(pipeline))
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "rag_chunks": len(rag.chunks)}
+    return {
+        "status": "ok",
+        "rag_chunks": len(rag.chunks),
+        "speech_models_loaded": {
+            "asr": asr.is_loaded,
+            "vad": vad.is_loaded,
+        },
+    }
+
+static_dir = Path(__file__).resolve().parent.parent / "static"
+app.mount("/", StaticFiles(directory=static_dir, html=True), name="frontend")
