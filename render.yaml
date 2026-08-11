@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: enterprise-voice-ai-omniagent-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt && apt-get update && apt-get install -y ffmpeg
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: WHISPER_MODEL
+        value: tiny
+      - key: WHISPER_DEVICE
+        value: cpu
+      - key: WHISPER_COMPUTE_TYPE
+        value: int8
+      - key: VAD_THRESHOLD
+        value: "0.50"
+      - key: MIN_SPEECH_MS
+        value: "250"
+      - key: ENDPOINT_SILENCE_MS
+        value: "700"
+      - key: BARGE_IN_ENABLED
+        value: "true"
+      - key: DATA_DIR
+        value: data
+      - key: FRONTEND_URL
+        value: "*"
