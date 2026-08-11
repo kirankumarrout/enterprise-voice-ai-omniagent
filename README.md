@@ -28,7 +28,9 @@ uvicorn app.main:app --reload
 
 Open http://127.0.0.1:8000
 
-The first ASR request downloads the Whisper model. Use `WHISPER_MODEL=tiny` for a faster CPU demo or `base` for better accuracy.
+The FastAPI service also serves the browser interface at `/`, so a Docker deployment can run the complete application from one public URL.
+
+Speech models load only when the first voice request arrives, keeping the frontend and health check responsive during cold starts. The first ASR request may download the Whisper model. Use `WHISPER_MODEL=tiny` for a faster CPU demo or `base` for better accuracy.
 
 ## Voice flow
 
